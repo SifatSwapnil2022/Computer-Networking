@@ -1,1 +1,4 @@
+ ISO( International Standards Organization) OSI (Open Systems Interconnection) Reference Model.
 
+***  It deals with connecting open systems.
+*** The OSI model has 7 layers.
