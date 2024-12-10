@@ -2,3 +2,11 @@
 
 ***  It deals with connecting open systems.
 *** The OSI model has 7 layers.
+1)Application layer  : Software , Algorithm ,App etc
+2)presentation  layer  : Syntax, Mechanism
+3)session layer  : Maintain (Src - Dest)
+4)Transport layer  : Data Genaration to Destination
+5)Network layer  : Show the path
+6)Datalink layer  : 2 Adjacent device error free(ETHERNET,WIFI)
+7)Physical layer  : All the hardware defines
+
