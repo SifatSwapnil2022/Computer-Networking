@@ -1,0 +1,272 @@
+#### Campus 1
+
+enable
+config 
+interface fa0/0
+ip address 128.168.10.254 255.255.0.0
+no shut
+do wr
+exit
+interface se2/0
+ip address 10.0.10.1 255.0.0.0
+clock rate 64000
+no shut
+do wr
+exit
+interface se3/0
+ip address 10.0.20.1 255.0.0.0
+clock rate 64000
+no shut
+do wr
+exit
+
+Campus 1:
+router ospf 1
+network 128.168.10.0 0.0.255.255 area 1
+network 10.0.10.0 0.255.255.255 area 1
+network 10.0.20.0 0.255.255.255 area 1
+exit
+
+
+# Campus 2
+
+enable
+config 
+interface fa0/0
+ip address 128.168.20.254 255.255.0.0
+no shut
+do wr
+exit
+interface se2/0
+ip address 10.0.10.2 255.0.0.0
+no shut
+do wr
+exit
+interface se3/0
+ip address 10.0.30.1 255.0.0.0
+clock rate 64000
+no shut
+do wr
+exit
+
+Campus 2:
+router ospf 1
+network 128.168.20.0 0.0.255.255 area 1
+network 10.0.10.0 0.255.255.255 area 1
+network 10.0.30.0 0.255.255.255 area 1
+exit
+
+
+#### Campus 3
+
+enable
+config 
+interface fa0/0
+ip address 128.168.30.254 255.255.0.0
+no shut
+do wr
+exit
+interface se2/0
+ip address 100.0.40.1 255.0.0.0
+clock rate 64000
+no shut
+do wr
+exit
+interface se3/0
+ip address 100.0.30.1 255.0.0.0
+clock rate 64000
+no shut
+do wr
+exit
+
+Campus 3:
+router ospf 1
+network 128.168.30.0 0.0.255.255 area 1
+network 100.0.30.0 0.255.255.255 area 1
+network 100.0.40.0 0.255.255.255 area 1
+exit
+
+#### Campus 4
+
+enable
+config 
+interface fa0/0
+ip address 128.168.40.254 255.255.0.0
+no shut
+do wr
+exit
+
+interface se2/0
+ip address 100.0.30.2 255.0.0.0
+no shut
+do wr
+exit
+
+interface se3/0
+ip address 100.0.20.1 255.0.0.0
+clock rate 64000
+no shut
+do wr
+exit
+
+Campus 4:
+router ospf 1
+network 128.168.40.0 0.0.255.255 area 1
+network 100.0.30.0 0.255.255.255 area 1
+network 100.0.20.0 0.255.255.255 area 1
+exit
+
+#### Campus 5
+
+enable
+config 
+interface fa0/0
+ip address 128.168.50.254 255.255.0.0
+no shut
+do wr
+exit
+
+interface se3/0
+ip address 100.0.20.2 255.0.0.0
+no shut
+do wr
+exit
+
+interface se2/0
+ip address 100.0.40.2 255.0.0.0
+no shut
+do wr
+exit
+
+interface se6/0
+ip address 100.0.50.1 255.0.0.0
+clock rate 64000
+no shut
+do wr
+exit
+
+Campus 5:
+router ospf 1
+network 128.168.50.0 0.0.255.255 area 1
+network 100.0.40.0 0.255.255.255 area 1
+network 100.0.20.0 0.255.255.255 area 1
+network 100.0.50.0 0.255.255.255 area 1
+exit
+
+#### Campus 6
+
+enable
+config 
+interface fa0/0
+ip address 128.168.60.254 255.255.0.0
+no shut
+do wr
+exit
+
+interface se3/0
+ip address 150.0.20.1 255.255.0.0
+clock rate 64000
+no shut
+do wr
+exit
+
+interface se2/0
+ip address 150.0.10.1 255.255.0.0
+clock rate 64000
+no shut
+do wr
+exit
+
+Campus 6:
+router ospf 1
+network 128.168.60.0 0.0.255.255 area 1
+network 150.0.10.0 0.0.255.255 area 1
+network 150.0.20.0 0.0.255.255 area 1
+exit
+
+#### Campus 7
+
+enable
+config 
+interface fa0/0
+ip address 128.168.70.254 255.255.0.0
+no shut
+do wr
+exit
+
+interface se3/0
+ip address 150.0.30.1 255.255.0.0
+clock rate 64000
+no shut
+do wr
+exit
+
+interface se2/0
+ip address 150.0.10.2 255.255.0.0
+no shut
+do wr
+exit
+
+Campus 7:
+router ospf 1
+network 128.168.70.0 0.0.255.255 area 1
+network 150.0.30.0 0.0.255.255 area 1
+network 150.0.10.0 0.0.255.255 area 1
+exit
+
+#### Apex Campus-8 Server
+
+enable
+config 
+interface fa0/0
+ip address 192.168.100.254 255.255.255.0
+no shut
+do wr
+exit
+
+interface se6/0
+ip address 100.0.50.2 255.0.0.0
+no shut
+do wr
+exit
+
+interface se2/0
+ip address 10.0.20.2 255.0.0.0
+no shut
+do wr
+exit
+
+interface se3/0
+ip address 10.0.30.2 255.0.0.0
+no shut
+do wr
+exit
+
+
+interface se7/0
+ip address 150.0.30.2 255.255.0.0
+no shut
+do wr
+exit
+
+
+interface se8/0
+ip address 150.0.20.2 255.255.0.0
+no shut
+do wr
+exit
+
+Campus 8:
+router ospf 1
+network 192.168.100.0 0.0.0.255 area 1
+network 150.0.30.0 0.0.255.255 area 1
+network 150.0.20.0 0.0.255.255 area 1
+network 100.0.20.0 0.255.255.255 area 1
+network 10.0.20.0 0.255.255.255 area 1
+network 10.0.30.0 0.255.255.255 area 1
+exit
+
+
+
+
+
